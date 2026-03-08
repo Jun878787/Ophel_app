@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Ophel Atlas - KI-Chat-Organizer & Navigator",
+    "description": "Erweiterungsname"
+  },
+  "extensionDescription": {
+    "message": "Machen Sie KI-Chats zu lesbarem Wissen. Nutzen Sie Gliederungen, Ordner und Prompts für einen besseren Workflow ohne Scrollen.",
+    "description": "Erweiterungsbeschreibung"
+  }
+}

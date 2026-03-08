@@ -1,0 +1,137 @@
+{
+  "name": "ophel",
+  "displayName": "Ophel Atlas - AI 对话结构化与导航工具",
+  "version": "1.0.14",
+  "description": "将 AI 对话转化为可阅读、可导航、可复用的知识内容。通过实时大纲、会话文件夹与 Prompt 词库，让对话告别无限滚动，成为可组织、可沉淀的工作流，适用于高频使用 AI 的学习与工作场景。",
+  "author": "urzeye",
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/urzeye/ophel.git"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "plasmo dev",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "build": "plasmo build",
+    "build:firefox": "plasmo build --target=firefox-mv3",
+    "build:all": "plasmo build && plasmo build --target=firefox-mv3",
+    "package": "plasmo package",
+    "package:firefox": "plasmo package --target=firefox-mv3",
+    "package:all": "plasmo package && plasmo package --target=firefox-mv3",
+    "dev:userscript": "vite --config vite.userscript.config.ts",
+    "build:userscript": "vite build --config vite.userscript.config.ts",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx,json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@plasmohq/storage": "^1.12.0",
+    "effect": "^3.19.13",
+    "fuzzysort": "3.1.0",
+    "highlight.js": "^11.11.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-emoji": "^3.0.0",
+    "markdown-it-mark": "^4.0.0",
+    "markdown-it-task-lists": "^2.1.1",
+    "plasmo": "0.90.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-simple-code-editor": "^0.13.1",
+    "zustand": "^5.0.9"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
+    "@types/chrome": "^0.0.258",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20.19.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
+    "@vitejs/plugin-react": "^5.1.2",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "3.2.4",
+    "terser": "^5.46.0",
+    "typescript": "5.3.3",
+    "vite": "^7.3.1",
+    "vite-plugin-monkey": "^7.1.8",
+    "vitepress": "^1.6.4"
+  },
+  "manifest": {
+    "name": "__MSG_extensionName__",
+    "description": "__MSG_extensionDescription__",
+    "default_locale": "en",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvAcJdUSu6L/pUzQoiycrhoVxXuB0urO8sVre1hOyEQ+SNbblsQ/b1E5IHiXTP4WglmvqM6Fe0CgNJBi6YxtHlWOmXv+rZ7xEMoCQAw4RdEBbm9Vf+bCwBeI9k1Pps9CcMWEE3bdBCC/z8/BcME37id56KIhSPDhifm2XM7W2AkgFRUo49nwlkNXaCkUZFSt/EMjCY30XrQ/rnltBcBZckbFxIJpIIbF8K7OScjagWaVa8MVWK/wiSJfN+sfh2La52yjhobDqHq9lLZLu6YBa8MS5MambmmpF0FnXnT6jdGiBxxwYUjg4Yy8k9fIhq8NwVshEPbWBANu7fCdV+9Ii2wIDAQAB",
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "igodu.love@gmail.com",
+        "strict_min_version": "109.0",
+        "data_collection_permissions": {
+          "required": [
+            "none"
+          ]
+        }
+      }
+    },
+    "permissions": [
+      "storage",
+      "declarativeNetRequestWithHostAccess"
+    ],
+    "optional_permissions": [
+      "notifications",
+      "cookies"
+    ],
+    "host_permissions": [
+      "https://gemini.google.com/*",
+      "https://business.gemini.google/*",
+      "https://aistudio.google.com/*",
+      "https://*.googleusercontent.com/*",
+      "https://chatgpt.com/*",
+      "https://chat.openai.com/*",
+      "https://grok.com/*",
+      "https://claude.ai/*",
+      "https://www.doubao.com/*"
+    ],
+    "optional_host_permissions": [
+      "<all_urls>"
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/*"
+        ],
+        "matches": [
+          "<all_urls>"
+        ]
+      }
+    ],
+    "commands": {
+      "open-global-url": {
+        "suggested_key": {
+          "default": "Alt+G",
+          "mac": "Alt+G"
+        },
+        "description": "Open Global URL"
+      }
+    }
+  }
+}
