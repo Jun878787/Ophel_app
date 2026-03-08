@@ -1,0 +1,286 @@
+/**
+ * 主题变量定义
+ * 
+ * 所有 CSS 变量在此统一定义，组件通过 var(--gh-*) 引用
+ * 支持浅色/深色两种模式，通过 body[data-gh-mode="dark"] 切换
+ * 
+ * 注意：同时定义在 :root 和 :host 上，确保 Shadow DOM 中也能访问
+ */
+
+/* ==================== 浅色模式（默认） ==================== */
+:root,
+:host {
+  /* === 基础背景色 === */
+  --gh-bg: #ffffff;
+  --gh-bg-secondary: #f9fafb;
+  --gh-bg-tertiary: #f3f4f6;
+
+  /* === 文字颜色 === */
+  --gh-text: #1f2937;
+  --gh-text-secondary: #6b7280;
+  --gh-text-tertiary: #9ca3af;
+  --gh-text-on-primary: #ffffff;
+
+  /* === 边框 === */
+  --gh-border: #e5e7eb;
+  --gh-border-active: #6366f1;
+
+  /* === 交互状态 === */
+  --gh-hover: #f3f4f6;
+  --gh-active-bg: #e5e7eb;
+
+  /* === 输入框 === */
+  --gh-input-bg: #ffffff;
+  --gh-input-border: #d1d5db;
+
+  /* === 图标 === */
+  --gh-icon: var(--gh-text-secondary);
+  --gh-icon-active: var(--gh-primary);
+  --gh-icon-hover: var(--gh-text);
+
+  /* === 阴影 === */
+  --gh-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  --gh-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --gh-shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+  /* === 品牌色 === */
+  --gh-primary: #4285f4;
+  --gh-secondary: #34a853;
+  --gh-danger: #ef4444;
+  --gh-brand-gradient: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+  --gh-shadow-brand: 0 4px 12px rgba(66, 133, 244, 0.3);
+
+  /* === 语义化组件变量 === */
+  --gh-header-bg: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+  --gh-tag-active-bg: #4285f4;
+  --gh-checkbox-bg: #4f46e5;
+
+  /* === 文件夹预设背景色 === */
+  --gh-folder-bg-default: #e0f2fe;
+  --gh-folder-bg-expanded: #c7d2fe;
+  --gh-folder-bg-0: #fef9e7;
+  --gh-folder-bg-1: #fdf2f8;
+  --gh-folder-bg-2: #eff6ff;
+  --gh-folder-bg-3: #ecfdf5;
+  --gh-folder-bg-4: #faf5ff;
+  --gh-folder-bg-5: #fefce8;
+  --gh-folder-bg-6: #ecfeff;
+  --gh-folder-bg-7: #fdf4ff;
+
+  /* === 大纲高亮色（翡翠绿） === */
+  --gh-outline-locate-bg: rgba(16, 185, 129, 0.25);
+  --gh-outline-locate-border: #10b981;
+  --gh-outline-locate-shadow: rgba(16, 185, 129, 0.5);
+  --gh-outline-sync-bg: rgba(52, 211, 153, 0.1);
+  --gh-outline-sync-border: #34d399;
+
+  /* === 用户提问节点 === */
+  --gh-user-query-bg: rgba(66, 133, 244, 0.08);
+  --gh-user-query-hover-bg: rgba(66, 133, 244, 0.15);
+
+  /* === 全局搜索大纲角色样式（浅色模式） === */
+  --gh-search-outline-query-accent: #3b82f6;
+  --gh-search-outline-query-bg: rgba(59, 130, 246, 0.14);
+  --gh-search-outline-query-text: #1d4ed8;
+  --gh-search-outline-query-border: rgba(59, 130, 246, 0.32);
+  --gh-search-outline-reply-accent: #8b5cf6;
+  --gh-search-outline-reply-bg: rgba(139, 92, 246, 0.14);
+  --gh-search-outline-reply-text: #7c3aed;
+  --gh-search-outline-reply-border: rgba(139, 92, 246, 0.3);
+
+  /* === 徽章样式 === */
+  --gh-badge-text: #4b5563;
+  --gh-badge-bg: #ffffff;
+  --gh-badge-border: #e5e7eb;
+  --gh-badge-shadow: #ffffff;
+
+  /* === 危险操作 === */
+  --gh-bg-danger: #fef2f2;
+  --gh-text-danger: #ef4444;
+  --gh-bg-danger-hover: #fee2e2;
+
+  /* === 品牌边框 === */
+  --gh-brand-border: transparent;
+
+  /* === 设置卡片 === */
+  --gh-card-bg: #ffffff;
+  --gh-card-border: #e5e7eb;
+
+  /* === 选中项渐变背景 === */
+  --gh-selected-gradient: linear-gradient(
+    135deg,
+    rgba(66, 133, 244, 0.1) 0%,
+    rgba(52, 211, 153, 0.1) 100%
+  );
+
+  /* === 遮罩层 === */
+  --gh-overlay-bg: rgba(0, 0, 0, 0.5);
+
+  /* === 按钮阴影 === */
+  --gh-btn-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --gh-btn-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  /* === 搜索高亮 === */
+  --gh-search-highlight-bg: rgba(255, 235, 59, 0.5);
+
+  /* === 玻璃效果（用于 header 按钮） === */
+  --gh-glass-bg: rgba(255, 255, 255, 0.2);
+  --gh-glass-bg-hover: rgba(255, 255, 255, 0.3);
+  --gh-glass-text: #ffffff;
+
+  /* === Emoji 选中背景 === */
+  --gh-emoji-selected-bg: #dbeafe;
+
+  /* === 输入框聚焦 === */
+  --gh-input-focus-border: #4285f4;
+  --gh-input-focus-shadow: 0 0 0 2px rgba(66, 133, 244, 0.1);
+
+  /* === 动画高亮色 === */
+  --gh-highlight-pulse: rgba(59, 130, 246, 0.3);
+
+  /* === 滑块圆点颜色 === */
+  --gh-slider-dot-bg: #d1d5db;
+
+  /* === 分类颜色（柔和背景色） === */
+  --gh-category-1: #fecaca; /* 红 */
+  --gh-category-2: #fed7aa; /* 橙 */
+  --gh-category-3: #fef08a; /* 黄 */
+  --gh-category-4: #bbf7d0; /* 绿 */
+  --gh-category-5: #a5f3fc; /* 青 */
+  --gh-category-6: #c7d2fe; /* 蓝紫 */
+  --gh-category-7: #f5d0fe; /* 粉紫 */
+}
+
+/* ==================== 深色模式 ==================== */
+/* 
+ * 此处定义仅用于普通 DOM 元素和作为备用。
+ */
+body[data-gh-mode="dark"],
+html[data-theme="dark"] {
+  /* === 基础背景色 === */
+  --gh-bg: #1e1e1e;
+  --gh-bg-secondary: #0b0b0b;
+  --gh-bg-tertiary: #262626;
+
+  /* === 文字颜色 === */
+  --gh-text: #e3e3e3;
+  --gh-text-secondary: #a0a0a0;
+  --gh-text-tertiary: #6b7280;
+
+  /* === 边框 === */
+  --gh-border: #333333;
+  --gh-border-active: #818cf8;
+
+  /* === 交互状态 === */
+  --gh-hover: #262626;
+  --gh-active-bg: #333333;
+
+  /* === 输入框 === */
+  --gh-input-bg: #262626;
+  --gh-input-border: #404040;
+
+  /* === 图标（深色模式） === */
+  --gh-icon: var(--gh-text-secondary);
+  --gh-icon-active: var(--gh-border-active);
+  --gh-icon-hover: var(--gh-text);
+
+  /* === 阴影 === */
+  --gh-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  --gh-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --gh-shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.7);
+
+  /* === 语义化组件变量（深色模式覆盖） === */
+  --gh-header-bg: #1e1e1e;
+  --gh-tag-active-bg: rgba(66, 133, 244, 0.6);
+  --gh-checkbox-bg: #818cf8;
+
+  /* === 文件夹预设背景色（深色半透明） === */
+  --gh-folder-bg-default: rgba(66, 133, 244, 0.15);
+  --gh-folder-bg-expanded: rgba(66, 133, 244, 0.3);
+  --gh-folder-bg-0: rgba(253, 224, 71, 0.15);
+  --gh-folder-bg-1: rgba(244, 114, 182, 0.15);
+  --gh-folder-bg-2: rgba(96, 165, 250, 0.15);
+  --gh-folder-bg-3: rgba(52, 211, 153, 0.15);
+  --gh-folder-bg-4: rgba(167, 139, 250, 0.15);
+  --gh-folder-bg-5: rgba(253, 224, 71, 0.1);
+  --gh-folder-bg-6: rgba(34, 211, 238, 0.15);
+  --gh-folder-bg-7: rgba(232, 121, 249, 0.15);
+
+  /* === 大纲高亮色（深色模式） === */
+  --gh-outline-locate-bg: rgba(52, 211, 153, 0.3);
+  --gh-outline-locate-border: #34d399;
+  --gh-outline-locate-shadow: rgba(52, 211, 153, 0.6);
+  --gh-outline-sync-bg: rgba(16, 185, 129, 0.15);
+  --gh-outline-sync-border: #10b981;
+
+  /* === 用户提问节点（深色模式） === */
+  --gh-user-query-bg: rgba(66, 133, 244, 0.15);
+  --gh-user-query-hover-bg: rgba(66, 133, 244, 0.25);
+
+  /* === 全局搜索大纲角色样式（深色模式） === */
+  --gh-search-outline-query-accent: #60a5fa;
+  --gh-search-outline-query-bg: rgba(96, 165, 250, 0.25);
+  --gh-search-outline-query-text: #bfdbfe;
+  --gh-search-outline-query-border: rgba(96, 165, 250, 0.42);
+  --gh-search-outline-reply-accent: #a78bfa;
+  --gh-search-outline-reply-bg: rgba(167, 139, 250, 0.24);
+  --gh-search-outline-reply-text: #ddd6fe;
+  --gh-search-outline-reply-border: rgba(167, 139, 250, 0.4);
+
+  /* === 徽章样式（深色模式） === */
+  --gh-badge-text: #e5e7eb;
+  --gh-badge-bg: #374151;
+  --gh-badge-border: #4b5563;
+  --gh-badge-shadow: #1f2937;
+
+  /* === 选中项渐变背景（深色模式） === */
+  --gh-selected-gradient: linear-gradient(
+    135deg,
+    rgba(66, 133, 244, 0.25) 0%,
+    rgba(52, 211, 153, 0.15) 100%
+  );
+
+  /* === 遮罩层（深色模式） === */
+  --gh-overlay-bg: rgba(0, 0, 0, 0.7);
+
+  /* === 按钮阴影（深色模式） === */
+  --gh-btn-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --gh-btn-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  /* === 搜索高亮（深色模式） === */
+  --gh-search-highlight-bg: rgba(255, 235, 59, 0.4);
+
+  /* === 玻璃效果（深色模式） === */
+  --gh-glass-bg: rgba(255, 255, 255, 0.08);
+  --gh-glass-bg-hover: rgba(255, 255, 255, 0.12);
+  --gh-glass-text: #e5e7eb;
+
+  /* === Emoji 选中背景（深色模式） === */
+  --gh-emoji-selected-bg: rgba(59, 130, 246, 0.3);
+
+  /* === 输入框聚焦（深色模式） === */
+  --gh-input-focus-border: #60a5fa;
+  --gh-input-focus-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+
+  /* === 动画高亮色（深色模式） === */
+  --gh-highlight-pulse: rgba(96, 165, 250, 0.4);
+
+  /* === 滑块圆点颜色（深色模式） === */
+  --gh-slider-dot-bg: #4b5563;
+
+  /* === 设置卡片背景（深色模式） === */
+  --gh-card-bg: #0b0b0b;
+  --gh-card-border: #333333;
+
+  /* === 分类颜色（深色模式 - 半透明） === */
+  --gh-category-1: rgba(248, 113, 113, 0.3); /* 红 */
+  --gh-category-2: rgba(251, 146, 60, 0.3); /* 橙 */
+  --gh-category-3: rgba(250, 204, 21, 0.3); /* 黄 */
+  --gh-category-4: rgba(74, 222, 128, 0.3); /* 绿 */
+  --gh-category-5: rgba(34, 211, 238, 0.3); /* 青 */
+  --gh-category-6: rgba(129, 140, 248, 0.3); /* 蓝紫 */
+  --gh-category-7: rgba(232, 121, 249, 0.3); /* 粉紫 */
+
+  /* === 品牌色（深色模式） === */
+  --gh-brand-gradient: linear-gradient(135deg, #8ab4f8 0%, #81c995 100%);
+}
