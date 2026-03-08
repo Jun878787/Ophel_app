@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Ophel Atlas - Organizador de Chat de IA",
+    "description": "Nome da extensão"
+  },
+  "extensionDescription": {
+    "message": "Transforme chats de IA em conhecimento legível. Use esboços, pastas e prompts para organizar seu fluxo e parar de rolar.",
+    "description": "Descrição da extensão"
+  }
+}
